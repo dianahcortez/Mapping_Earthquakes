@@ -12,12 +12,16 @@ Basil and Sadhana like how you created your earthquake map with two different ma
 ## Resources
 - VSCode, Javascript, HTML, Mapbox APIs, Leaflet.js, GeoJSON
 
-## Project Deliverables
-- Deliverable 1: Add Tectonic Plate Data
-- Deliverable 2: Add Major Earthquake Data
-- Deliverable 3: Add an Additional Map
+## Project Results (Challenge Deliverables)
+
+### Deliverable 1: Add Tectonic Plate Data
 
 
-## Results
+### Deliverable 2: Add Major Earthquake Data
+
+
+### Deliverable 3: Add an Additional Map
+
+
 
 
