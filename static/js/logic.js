@@ -2,12 +2,12 @@
 console.log("working");
 
 // Create the map object with a center and zoom level.
-let map= L.map('mapid').setView([34.0522, -118.2437], 14);
+let map= L.map('mapid').setView([35.2220, -101.8313], 5);
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 4,
+    maxZoom: 8,
     id: 'mapbox/dark-v10',
     tileSize: 512,
     zoomOffset: -1,
@@ -37,6 +37,13 @@ let cities = [{
     population: 2705994
   },
   {
+    location: [39.7392, -104.9903],
+    city: "Denver",
+    state: "CO",
+    population: 715878
+},
+
+  {
     location: [29.7604, -95.3698],
     city: "Houston",
     state: "TX",
@@ -53,7 +60,25 @@ let cities = [{
     city: "Phoenix",
     state: "AZ",
     population: 1660272
-  }
+  },
+ {
+  location: [47.6062, -122.3321],
+  city: "Seattle",
+  state: "WA",
+  population: 741251
+ },
+{
+ location: [37.7749, -122.4194],
+ city: "San Francisco",
+ state: "CA",
+ population: 874784
+},
+{
+ location: [40.7608, -111.8910],
+ city: "Salt Lake City",
+ state: "UT",
+ population: 200133
+}
   ];
 
 // Loop through the cities array and create one marker for each city.
@@ -62,7 +87,31 @@ let cities = [{
 //     L.marker(city.location).addTo(map);
 // });
 
-// Loop through the cities array and create one marker for each city.
+// Coordinates for each point to be used in the polyline.
+let line = [
+    [33.9416, -118.4085],
+    [37.6213, -122.3790],
+    [40.7899, -111.9791],
+    [47.4502, -122.3088],
+    [39.7392, -104.9903],
+    [33.4484, -112.0740],
+    [40.7128, -74.0059],
+    [29.7604, -95.3698],
+    [41.8781, -87.6298]
+
+  ];
+ 
+  // Create a polyline using the line coordinates and make the line red.
+L.polyline(line, {
+    color: "yellow",
+    weight: 4,
+    opacity: 0.25,
+    dashArray: 5,
+    dashOffset: 10,
+  }).addTo(map);
+
+// Loop through the cities array and create one marker for each city. /20000 divides the population by 20000, 
+//population size perspective, so it does't take up the whole screen, you can play with this number, always want them smaller and divided!
 cities.forEach(function(city) {
     console.log(city)
     L.circleMarker(city.location, {
