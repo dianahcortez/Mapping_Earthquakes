@@ -1,8 +1,26 @@
 html,
+head,
+title,
 body,
 #mapid {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+}
+.legend {
+  background-color: rgb(18, 13, 25);
+  padding: 10px;
+  line-height: 20px;
+  color:white;
+border-radius: 5px;
+
+}
+
+.legend i {
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  opacity: 0.7;
 }
