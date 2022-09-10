@@ -337,7 +337,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
 
   // Here we create a legend control object.
 let legend = L.control({ 
-  position: "bottomright"
+  position: "topleft"
 });
 
 // Then add all the details for the legend
